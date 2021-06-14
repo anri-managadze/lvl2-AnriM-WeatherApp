@@ -1,0 +1,61 @@
+main {
+  width: 60%;
+  margin: 10px auto;
+  padding: 20px;
+
+  .container,form {
+    display: flex;
+    justify-content: space-between;
+
+    form{
+      width: 100%;
+      height: 30px;
+      box-sizing: border-box;
+
+      input {
+        border: 1px solid #3E3E40;
+        border-radius: 5px;
+      }
+      button {
+        border-radius: 20px;
+        border: none;
+        background: #3E3E40 ;
+        color: white;
+      }
+    }
+    .time,.cloud, .humanity{
+      margin-top: 10px;
+    }
+    .time{
+      font-size: 14px;
+      color: #EE503F;
+    }
+    .city {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .temp{
+      margin-top: 17px;
+      font-weight: bold;
+      font-size: 30px;
+    }
+    .humdew {
+      padding-left: 20px;
+      border-left:1px solid #C6B4B2;
+      font-size: 14px;
+    }
+    .hourly-btn {
+      margin-top: 20px;
+      border: none;
+      width: 150px;
+      height: 30px;
+      background: #EE503F;
+      border-radius: 3px;
+      text-transform: none!important;
+    }
+  }
+}
+.MuiDialog-paperWidthSm{
+  width: 600px!important;
+  height: 400px!important;
+}
