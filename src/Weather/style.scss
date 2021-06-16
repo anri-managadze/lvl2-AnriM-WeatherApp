@@ -1,61 +1,91 @@
-main {
+* {
+  box-sizing: border-box;
+}
+form, .container {
   width: 60%;
-  margin: 10px auto;
-  padding: 20px;
+  margin: 0 auto;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
 
-  .container,form {
-    display: flex;
-    justify-content: space-between;
+  input {
+    width: 75%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #888888;
+    padding: 5px;
 
-    form{
-      width: 100%;
-      height: 30px;
-      box-sizing: border-box;
-
-      input {
-        border: 1px solid #3E3E40;
-        border-radius: 5px;
+  }
+  button{
+    width: 15%;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    background: #3B3B3D;
+    color: white;
+  }
+}
+.container {
+    .current {
+      display: flex;
+      flex-direction: column;
+      span{margin-left: 10px}
+      .time {color: #EF503E}
+      .city {font-weight: bold; font-size: 28px}
+      .temp {font-size: 35px; margin-top: 20px}
+      .cloud{font-weight: bold}
+      .humdew {
+        border-left: 1px solid #C9B4AE;
+        margin-top: 5px;
+        .humanity, .dewpoint, span{margin-left: 20px;}
       }
-      button {
-        border-radius: 20px;
-        border: none;
-        background: #3E3E40 ;
-        color: white;
-      }
     }
-    .time,.cloud, .humanity{
-      margin-top: 10px;
-    }
-    .time{
-      font-size: 14px;
-      color: #EE503F;
-    }
-    .city {
-      font-size: 22px;
-      font-weight: bold;
-    }
-    .temp{
-      margin-top: 17px;
-      font-weight: bold;
-      font-size: 30px;
-    }
-    .humdew {
-      padding-left: 20px;
-      border-left:1px solid #C6B4B2;
-      font-size: 14px;
-    }
-    .hourly-btn {
-      margin-top: 20px;
-      border: none;
+  .modal {
+    .hourly-btn{
+      margin-top: 50px;
       width: 150px;
       height: 30px;
-      background: #EE503F;
       border-radius: 3px;
-      text-transform: none!important;
+      background: #EF503E;
+      color: black;
+    }
+  }
+  .daily {
+    h4 {margin: 0;}
+    ul {
+      padding: 0;
+      li{
+        list-style: none;
+        margin-top: 10px;
+        img{
+          margin-left: 30px;
+        }
+        span{
+          margin-left: 30px;
+        }
+      }
     }
   }
 }
-.MuiDialog-paperWidthSm{
-  width: 600px!important;
-  height: 400px!important;
+ul {
+  padding:0;
+  li{
+    list-style: none;
+    margin-top: 10px;
+    img{
+      margin-left: 30px;
+    }
+    span{
+      margin-left: 30px;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+    .daily {
+      margin-top: 20px;
+    }
+  }
 }

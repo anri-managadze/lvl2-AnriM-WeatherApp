@@ -1,26 +1,26 @@
 import React, {useEffect, useState} from 'react';
 
-
-const Daily = ({search}) => {
+const Hourly = ({search}) => {
     const [data, setData]=useState({});
     useEffect(()=>{
         getData();
     }, [search]);
     const getData =()=> {
-        fetch(`https://api.weatherbit.io/v2.0/forecast/daily?&city=${search}&units=metric&key=1cd137c42bcd4af28ab1553501a00aab&days=8`)
+        fetch(` https://api.weatherbit.io/v2.0/forecast/hourly?&city=${search}&units=metric&key=1cd137c42bcd4af28ab1553501a00aab&hours=6`)
             .then(res => res.json())
             .then(weather => {
                 setData(weather);
+                console.log(weather)
             });
     }
     return (
         <div>
-            <h4>8 Day Forecast</h4>
+            <h4>5 Day Forecast</h4>
             {(typeof data.data != 'undefined') ? (
                 <ul>
                     {data.data.map((el, index) => {
                         return (
-                            <li key={index}>{el.datetime}  {el.min_temp} / {el.max_temp} °C <span>{el.weather.description}</span> </li>
+                            <li key={index}>{el.wind_dir} </li>
                         )
                     })}
                 </ul>
@@ -28,5 +28,7 @@ const Daily = ({search}) => {
         </div>
     );
 
-}
-export default Daily;
+
+};
+
+export default Hourly;

@@ -1,61 +1,105 @@
-main {
-  width: 60%;
-  margin: 10px auto;
-  padding: 20px;
+* {
+  box-sizing: border-box;
 }
-main .container, main form {
+
+form, .container {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 15px;
   display: flex;
   justify-content: space-between;
 }
-main .container form, main form form {
-  width: 100%;
-  height: 30px;
-  box-sizing: border-box;
-}
-main .container form input, main form form input {
-  border: 1px solid #3E3E40;
+form input, .container input {
+  width: 75%;
+  height: 40px;
   border-radius: 5px;
+  border: 1px solid #888888;
+  padding: 5px;
 }
-main .container form button, main form form button {
-  border-radius: 20px;
+form button, .container button {
+  width: 15%;
+  height: 40px;
+  border-radius: 30px;
   border: none;
-  background: #3E3E40;
+  background: #3B3B3D;
   color: white;
 }
-main .container .time, main .container .cloud, main .container .humanity, main form .time, main form .cloud, main form .humanity {
-  margin-top: 10px;
+
+.container .current {
+  display: flex;
+  flex-direction: column;
 }
-main .container .time, main form .time {
-  font-size: 14px;
-  color: #EE503F;
+.container .current span {
+  margin-left: 10px;
 }
-main .container .city, main form .city {
-  font-size: 22px;
+.container .current .time {
+  color: #EF503E;
+}
+.container .current .city {
   font-weight: bold;
+  font-size: 28px;
 }
-main .container .temp, main form .temp {
-  margin-top: 17px;
-  font-weight: bold;
-  font-size: 30px;
-}
-main .container .humdew, main form .humdew {
-  padding-left: 20px;
-  border-left: 1px solid #C6B4B2;
-  font-size: 14px;
-}
-main .container .hourly-btn, main form .hourly-btn {
+.container .current .temp {
+  font-size: 35px;
   margin-top: 20px;
-  border: none;
+}
+.container .current .cloud {
+  font-weight: bold;
+}
+.container .current .humdew {
+  border-left: 1px solid #C9B4AE;
+  margin-top: 5px;
+}
+.container .current .humdew .humanity, .container .current .humdew .dewpoint, .container .current .humdew span {
+  margin-left: 20px;
+}
+.container .modal .hourly-btn {
+  margin-top: 50px;
   width: 150px;
   height: 30px;
-  background: #EE503F;
   border-radius: 3px;
-  text-transform: none !important;
+  background: #EF503E;
+  color: black;
+}
+.container .daily h4 {
+  margin: 0;
+}
+.container .daily ul {
+  padding: 0;
+}
+.container .daily ul li {
+  list-style: none;
+  margin-top: 10px;
+}
+.container .daily ul li img {
+  margin-left: 30px;
+}
+.container .daily ul li span {
+  margin-left: 30px;
 }
 
-.MuiDialog-paperWidthSm {
-  width: 600px !important;
-  height: 400px !important;
+ul {
+  padding: 0;
+}
+ul li {
+  list-style: none;
+  margin-top: 10px;
+}
+ul li img {
+  margin-left: 30px;
+}
+ul li span {
+  margin-left: 30px;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .container .daily {
+    margin-top: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
