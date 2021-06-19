@@ -1,8 +1,12 @@
 import React, {useEffect, useState} from 'react';
-
+import Loader from "../components/Loader";
+import './CurrentWeather.css';
+import {API_KEY, API_MAIN_URL} from '../components/Config';
+import moment from 'moment'
 
 const CurrentWeather = ({search}) => {
     const [weather, setWeather]= useState({});
+    const [loading, setLoading]=useState(false);
     useEffect(()=>{
         if(!!search && search.trim().length > 0) {
             getData();
@@ -25,22 +29,24 @@ const CurrentWeather = ({search}) => {
             }
         })
     }
-
     const getData = () => {
-        fetch(`https://api.weatherbit.io/v2.0/current?&city=${search}&units=metric&key=1cd137c42bcd4af28ab1553501a00aab`)
+        setLoading(true);
+        fetch(`${API_MAIN_URL}current?&city=${search}&units=metric&key=${API_KEY}`)
             .then(res => res.json())
             .then(weather => {
-                setWeather(weather);
-
-            });
+                setWeather((weather));
+            }).finally(()=> setLoading(false));
     }
+
     return (
         <div>
+            <Loader isLoading={loading}>
             {(typeof weather.data !='undefined') ? (
+
                 <div>
-                    <div className='time'>{weather.data[0].datetime}</div>
+                    <div className='time'>{moment(weather.data[0].datetime).format('LLL')} </div>
                     <div className='city'>{weather.data[0].city_name}, {weather.data[0].country_code}</div>
-                    <div className='temp'> {weather.data[0].temp} °C</div>
+                    <div className='temp'><img src={`https://www.weatherbit.io/static/img/icons/${weather.data[0].weather.icon}.png`} alt='w-p'/> {weather.data[0].temp} °C</div>
                     <div className='cloud'>Feels like {weather.data[0].app_temp}°C. Cloud: {weather.data[0].clouds} %. {weather.data[0].weather.description}</div>
                     <div className='humdew'>
                         <div className='humanity'>Humanity : {weather.data[0].rh} %. <span> UV: {weather.data[0].uv}</span></div>
@@ -48,6 +54,7 @@ const CurrentWeather = ({search}) => {
                     </div>
                 </div>
             ) : (' ')}
+            </Loader>
         </div>
     );
 };

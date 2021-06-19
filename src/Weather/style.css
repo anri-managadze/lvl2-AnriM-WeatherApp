@@ -2,94 +2,12 @@
   box-sizing: border-box;
 }
 
-form, .container {
+.container {
   width: 60%;
   margin: 0 auto;
   padding-top: 15px;
   display: flex;
   justify-content: space-between;
-}
-form input, .container input {
-  width: 75%;
-  height: 40px;
-  border-radius: 5px;
-  border: 1px solid #888888;
-  padding: 5px;
-}
-form button, .container button {
-  width: 15%;
-  height: 40px;
-  border-radius: 30px;
-  border: none;
-  background: #3B3B3D;
-  color: white;
-}
-
-.container .current {
-  display: flex;
-  flex-direction: column;
-}
-.container .current span {
-  margin-left: 10px;
-}
-.container .current .time {
-  color: #EF503E;
-}
-.container .current .city {
-  font-weight: bold;
-  font-size: 28px;
-}
-.container .current .temp {
-  font-size: 35px;
-  margin-top: 20px;
-}
-.container .current .cloud {
-  font-weight: bold;
-}
-.container .current .humdew {
-  border-left: 1px solid #C9B4AE;
-  margin-top: 5px;
-}
-.container .current .humdew .humanity, .container .current .humdew .dewpoint, .container .current .humdew span {
-  margin-left: 20px;
-}
-.container .modal .hourly-btn {
-  margin-top: 50px;
-  width: 150px;
-  height: 30px;
-  border-radius: 3px;
-  background: #EF503E;
-  color: black;
-}
-.container .daily h4 {
-  margin: 0;
-}
-.container .daily ul {
-  padding: 0;
-}
-.container .daily ul li {
-  list-style: none;
-  margin-top: 10px;
-}
-.container .daily ul li img {
-  margin-left: 30px;
-}
-.container .daily ul li span {
-  margin-left: 30px;
-}
-
-ul {
-  padding: 0;
-}
-ul li {
-  list-style: none;
-  margin-top: 10px;
-}
-ul li img {
-  margin-left: 30px;
-}
-ul li span {
-  margin-left: 30px;
 }
 
 @media only screen and (max-width: 800px) {

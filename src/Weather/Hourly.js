@@ -1,4 +1,7 @@
 import React, {useEffect, useState} from 'react';
+import Modal from "../components/Modal";
+import './Hourly.css';
+import {API_KEY, API_MAIN_URL} from "../components/Config";
 
 const Hourly = ({search}) => {
     const [data, setData]=useState({});
@@ -6,25 +9,25 @@ const Hourly = ({search}) => {
         getData();
     }, [search]);
     const getData =()=> {
-        fetch(` https://api.weatherbit.io/v2.0/forecast/hourly?&city=${search}&units=metric&key=1cd137c42bcd4af28ab1553501a00aab&hours=6`)
+        fetch(`${API_MAIN_URL}forecast/hourly?&city=${search}&units=metric&key=${API_KEY}&hours=12`)
             .then(res => res.json())
             .then(weather => {
                 setData(weather);
-                console.log(weather)
             });
     }
     return (
         <div>
-            <h4>5 Day Forecast</h4>
+            <Modal btnText='Hourly Forecast' title={<h4>12 Hours Forecast</h4>}>
             {(typeof data.data != 'undefined') ? (
                 <ul>
                     {data.data.map((el, index) => {
                         return (
-                            <li key={index}>{el.wind_dir} </li>
+                            <li key={index}>{el.datetime} <img src={`https://www.weatherbit.io/static/img/icons/${el.weather.icon}.png`} alt='w-p'/> {el.temp} °C <span>{el.weather.description}</span></li>
                         )
                     })}
                 </ul>
             ) : (' ')}
+            </Modal>
         </div>
     );
 

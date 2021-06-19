@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
+import './SearchBar.css';
 
 const SearchBar = ({query, onSubmit}) =>  {
     const [text, setText]=useState(query);
     useEffect(()=>{
         current();
-    },[])
+    },[]);
+
     const current = (e) => {
         !!e && e.preventDefault();
         onSubmit (text);

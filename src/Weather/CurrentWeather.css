@@ -1,0 +1,50 @@
+.current {
+  display: flex;
+  flex-direction: column;
+}
+.current span {
+  margin-left: 10px;
+}
+.current .time {
+  color: #EF503E;
+}
+.current .city {
+  font-weight: bold;
+  font-size: 28px;
+}
+.current .temp {
+  font-size: 35px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.current .temp img {
+  width: 60px;
+  height: 60px;
+}
+.current .cloud {
+  font-weight: bold;
+}
+.current .humdew {
+  border-left: 1px solid #C9B4AE;
+  margin-top: 5px;
+}
+.current .humdew .humanity, .current .humdew .dewpoint, .current .humdew span {
+  margin-left: 20px;
+}
+
+ul {
+  padding: 0;
+}
+ul li {
+  list-style: none;
+  margin-top: 10px;
+}
+ul li img {
+  margin-left: 30px;
+}
+ul li span {
+  margin-left: 30px;
+}
+
+/*# sourceMappingURL=CurrentWeather.css.map */

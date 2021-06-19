@@ -4,8 +4,7 @@ import Daily from "./Weather/Daily";
 import React, {useState} from "react";
 import CurrentWeather from "./Weather/CurrentWeather";
 import './Weather/style.css';
-import ModalApp from "./components/Modal";
-
+import Hourly from "./Weather/Hourly";
 
 
 function App() {
@@ -19,7 +18,7 @@ function App() {
                 <CurrentWeather search={query} />
             </div>
                 <div className='modal'>
-                    <ModalApp search={query}/>
+                    <Hourly search={query}/>
                 </div>
             </div>
             <div className='daily'>
@@ -30,5 +29,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
