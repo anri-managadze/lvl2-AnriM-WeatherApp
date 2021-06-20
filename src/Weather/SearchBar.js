@@ -12,7 +12,7 @@ const SearchBar = ({query, onSubmit}) =>  {
         onSubmit (text);
     }
     return (
-        <div>
+        <div className='searchbar'>
             <form onSubmit={current}>
                 <input
                     type="text"

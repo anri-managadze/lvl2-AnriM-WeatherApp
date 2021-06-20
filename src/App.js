@@ -5,13 +5,18 @@ import React, {useState} from "react";
 import CurrentWeather from "./Weather/CurrentWeather";
 import './Weather/style.css';
 import Hourly from "./Weather/Hourly";
+import Logo from "./components/Logo";
+
 
 
 function App() {
     const [query, setQuery] = useState('kutaisi');
   return (
     <div>
-        <SearchBar search={query} onSubmit={(newQuery)=>{setQuery(newQuery)}} />
+        <header>
+            <Logo />
+            <SearchBar search={query} onSubmit={(newQuery)=>{setQuery(newQuery)}} />
+        </header>
         <div className='container'>
             <div>
             <div className='current'>

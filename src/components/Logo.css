@@ -1,0 +1,11 @@
+.logo {
+  width: 19%;
+  text-align: center;
+}
+.logo img {
+  width: 120px;
+  height: 80px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=Logo.css.map */
