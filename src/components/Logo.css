@@ -7,5 +7,12 @@
   height: 80px;
   cursor: pointer;
 }
+@media only screen and (max-width: 800px) {
+  .logo img {
+    width: 80px;
+    height: 60px;
+    cursor: pointer;
+  }
+}
 
 /*# sourceMappingURL=Logo.css.map */

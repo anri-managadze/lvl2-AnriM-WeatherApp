@@ -51,7 +51,7 @@ const CurrentWeather = ({search}) => {
                     <div className='cloud'>Feels like {weather.feel}°C. Cloud: {weather.cloud} %. {weather.description}</div>
                     <div className='humdew'>
                         <div className='humanity'>Humanity : {weather.humanity} %. <span> UV: {weather.uv}</span></div>
-                        <div className='dewpoint'>Dew point {weather.dewpoint} °C.<span> Visibility: {weather. visibility} Km</span></div>
+                        <div className='dewpoint'>Dew point {weather.dewpoint} °C.<span>Visibility: {weather. visibility} Km</span></div>
                     </div>
                 </div>
             ) : (' ')}

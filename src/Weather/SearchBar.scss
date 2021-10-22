@@ -24,3 +24,14 @@ form {
     color: white;
   }
 }
+@media only screen and (max-width: 800px) {
+  input {
+    min-width: 40%;
+  }
+  form {
+    justify-content: center;
+  }
+  button{
+    min-width: 25%;
+  }
+}

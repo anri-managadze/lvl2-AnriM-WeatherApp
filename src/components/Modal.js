@@ -1,6 +1,7 @@
 import {useState} from "react";
 import './Modal.css';
 
+
 const Modal= ({btnText, title, children}) => {
     const [isOpen, setIsOpen] = useState(false);
     return (

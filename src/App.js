@@ -7,8 +7,6 @@ import './Weather/style.css';
 import Hourly from "./Weather/Hourly";
 import Logo from "./components/Logo";
 
-
-
 function App() {
     const [query, setQuery] = useState('kutaisi');
   return (

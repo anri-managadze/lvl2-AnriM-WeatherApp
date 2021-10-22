@@ -1,2 +1,2 @@
-export const API_KEY= '1cd137c42bcd4af28ab1553501a00aab';
+export const API_KEY= 'bd5d779e34e04d3cb8c7ad2432ba5f8a';
 export const API_MAIN_URL='https://api.weatherbit.io/v2.0/';
